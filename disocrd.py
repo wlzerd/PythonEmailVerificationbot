@@ -34,11 +34,11 @@ async def on_message(message):
         smtp = smtplib.SMTP('smtp.gmail.com', 587)
         smtp.ehlo()      # say Hello
         smtp.starttls()  # TLS 사용시 필요
-        smtp.login('rtx4060@gmail.com', 'wkssdf1234')
+        smtp.login('본인이메일', '본인이메일비밀번호')
         msg = MIMEText(str(a))
-        msg['Subject'] = '디스코드 오버워치_MIneral서버 인증코드입니다'
+        msg['Subject'] = '메일제목'
         msg['To'] = data
-        smtp.sendmail('rtx4060@gmail.com', data, msg.as_string())
+        smtp.sendmail('본인이메일', data, msg.as_string())
         smtp.quit()
         await message.channel.send("해당이메일로 인증코드가 전송되었습니다 60초 이내에 인증번호를 보내주세요")
         try:
